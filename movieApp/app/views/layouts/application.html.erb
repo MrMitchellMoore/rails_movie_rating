@@ -21,7 +21,6 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-              <p> Signed in as: <%= current_user.email %> </p>
               <%= render "layouts/user_nav" %>
               <% else %>
                 <%= render "layouts/public_nav" %>

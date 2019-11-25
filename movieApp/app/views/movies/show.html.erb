@@ -25,5 +25,13 @@
   <%= @movie.rating %>
 </p>
 
+<% if @movie.image.attached? %>
+  <strong> Movie </strong>
+  <div class="movie_image">
+    <%= image_tag @movie.image.variant(resize: '200x400') %>
+  </div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
