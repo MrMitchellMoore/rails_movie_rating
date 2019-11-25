@@ -1,2 +1,3 @@
-# rails_movie_rating
+# rails movie rating
+
 Rails movie rating app
