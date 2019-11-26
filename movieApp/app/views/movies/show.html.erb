@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<div class="card-group">
+  <div class="card">
+    <% if @movie.image.attached? %>
+    <%= link_to (image_tag @movie.image.variant(resize: '400x400'), class:'card-img-top'), movie %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @movie.title %></h5>
+      <p class="card-text"><%= @movie.description %></p>
+      <p class="card-text"><%= @movie.movie_length %></p>
+      <p class="card-text"><%= @movie.director %></p>
+      <p class="card-text"><%= @movie.rating %></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
