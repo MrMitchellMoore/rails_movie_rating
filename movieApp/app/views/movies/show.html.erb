@@ -3,51 +3,18 @@
 <div class="card-group">
   <div class="card">
     <% if @movie.image.attached? %>
-    <%= link_to (image_tag @movie.image.variant(resize: '400x400'), class:'card-img-top'), movie %>
+    <%= link_to (image_tag @movie.image.variant(resize: '200x200'), class:'card-img-top'), @movie %>
     <% end %>
     <div class="card-body">
-      <h5 class="card-title"><%= @movie.title %></h5>
-      <p class="card-text"><%= @movie.description %></p>
-      <p class="card-text"><%= @movie.movie_length %></p>
-      <p class="card-text"><%= @movie.director %></p>
-      <p class="card-text"><%= @movie.rating %></p>
+      <h5 class="card-title"> Title: <%= @movie.title %></h5>
+      <p class="card-text"> Description: <%= @movie.description %></p>
+      <p class="card-text"> Length: <%= @movie.movie_length %></p>
+      <p class="card-text"> Director: <%= @movie.director %></p>
+      <p class="card-text"> Rating: <%= @movie.rating %></p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
 </div>
-
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Movie length:</strong>
-  <%= @movie.movie_length %>
-</p>
-
-<p>
-  <strong>Director:</strong>
-  <%= @movie.director %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @movie.rating %>
-</p>
-
-<% if @movie.image.attached? %>
-  <strong> Movie </strong>
-  <div class="movie_image">
-    <%= image_tag @movie.image.variant(resize: '200x400') %>
-  </div>
-<% end %>
-
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
