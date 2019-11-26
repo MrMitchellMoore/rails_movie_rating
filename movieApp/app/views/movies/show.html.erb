@@ -12,9 +12,26 @@
       <p class="card-text"> Director: <%= @movie.director %></p>
       <p class="card-text"> Rating: <%= @movie.rating %></p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @movie.title %></h1>
+        <p class="card-text"><%= @movie.description %></p>
+        <% if @reviews.blank? %>
+        <h3>NO reviews yet, would you like to had the first!</h3>
+        <%= link_to 'Write Review', new_movie_review_path(@movie), class: 'btn btn-danger' %>
+        <% else %>
+          <h5 class="card-title"> Reviews </h5>
+          <% @reviews.each do |review| %>
+          <div class="reviews">
+             <p class="card-text"> <%= review.rating %> of 5 stars</p>
+            <p class="card-text"><%= review.comment %></p>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<%= link_to 'Back', movies_path %> |
+<%= link_to 'Write Review', new_movie_review_path(@movie) %>

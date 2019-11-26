@@ -15,3 +15,14 @@ body {
 		padding-bottom: 8px;
 	}
 }
+
+.card-img-top {
+	width: 30%;
+}
+
+img {
+    width: 300px; // how much you want
+    min-height: 400px;
+    float: left;
+    margin: 10px;
+}
